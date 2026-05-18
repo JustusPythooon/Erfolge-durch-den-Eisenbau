@@ -11,7 +11,6 @@
             background-color: #f4f4f4;
         }
 
-        /* Menü */
         nav {
             background: #333;
             padding: 10px;
@@ -28,19 +27,16 @@
             color: lightblue;
         }
 
-        /* Überschrift */
         header {
             text-align: center;
             padding: 20px;
             background: #ddd;
         }
 
-        /* Inhalt */
         .container {
             padding: 20px;
         }
 
-        /* Kästen */
         .box {
             background: white;
             padding: 15px;
@@ -49,62 +45,121 @@
             box-shadow: 0 0 10px gray;
         }
 
-        /* Bilder */
         img {
             width: 100%;
             max-width: 400px;
             border-radius: 10px;
+        }
+
+        /* Schema */
+        .schema {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .node {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px gray;
+            text-align: center;
+            min-width: 180px;
+        }
+
+        .arrow {
+            font-size: 30px;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Menü -->
-    <nav>
-        <a href="#">Start</a>
-        <a href="#folgen">Folgen</a>
-        <a href="#bilder">Bilder</a>
-    </nav>
+<nav>
+    #Start</a>
+    <a href="#schema">Schema</a>
+    <a href="#bilder">Bilder</a>
+</nav>
 
-    <!-- Titel -->
-    <header>
-        <h1>Eisenbahnbau</h1>
-        <p>Industrialisierung in Deutschland</p>
-    </header>
+<header>
+    <h1>Eisenbahnbau</h1>
+    <p>Industrialisierung in Deutschland</p>
+</header>
 
-    <!-- Inhalt -->
-    <div class="container">
+<div class="container">
 
-        <!-- Platzhalter Text -->
-        <div class="box" id="folgen">
-            <h2>Folgen des Eisenbahnbaus</h2>
-            <p>
-                Die Vorteile der Eisenbahn wahren vielfätig sie sorgen für den Transport von Waren und erleichterten das Reisen enorm. Das Eisenbahn Netz wuchs, dadurch erhöte sich auch die Anzahl der Eisenbahnen. Die Nachfrage stieg nach Schienen, Waggons, Lokomotiven und Rädern, dadurch wahr ein sehr hoder Bedarf von Steinkohle und Erze da. 
-            </p>
+    <div class="box" id="schema">
+        <h2>Schema: Erfolge durch den Eisenbahnbau</h2>
+
+        <div class="schema">
+
+            <div class="node">Eisenbahnbau beginnt</div>
+
+            <div class="arrow">⬇</div>
+
+            <div class="node">Schneller Transport von Waren und Menschen</div>
+
+            <div class="arrow">⬇</div>
+
+            <div class="row">
+                <div class="node">Handel wird schneller</div>
+                <div class="arrow">➡</div>
+                <div class="node">Wirtschaft wächst</div>
+            </div>
+
+            <div class="arrow">⬇</div>
+
+            <div class="row">
+                <div class="node">Mehr Eisenbahnen nötig</div>
+                <div class="arrow">➡</div>
+                <div class="node">Industrie wächst</div>
+            </div>
+
+            <div class="arrow">⬇</div>
+
+            <div class="row">
+                <div class="node">Hohe Nachfrage nach Material</div>
+                <div class="arrow">➡</div>
+                <div class="node">Mehr Kohle- und Stahlproduktion</div>
+            </div>
+
+            <div class="arrow">⬇</div>
+
+            <div class="row">
+                <div class="node">Neue Arbeitsplätze</div>
+                <div class="arrow">➡</div>
+                <div class="node">Städte wachsen</div>
+            </div>
+
         </div>
-
-        <!-- Kasten 2 -->
-        <div class="box">
-            <h2>Wichtige Fakten</h2>
-            <ul>
-                <li>Mehr Transporte</li>
-                <li>Schnellerer Handel</li>
-                <li>Städte wachsen</li>
-            </ul>
-        </div>
-
-        <!-- Bilder -->
-        <div class="box" id="bilder">
-            <h2>Bilder</h2>
-
-            <!-- Platzhalter Bild -->
-            <img src="https://i.postimg.cc/Qtg75FmG/33403-1200x1200-8931.jpg">
-
-            <p>Eisenbahn aus der Industrialisierung</p>
-        </div>
-
     </div>
+
+    <div class="box">
+        <h2>Wichtige Fakten</h2>
+        <ul>
+            <li>Mehr Transporte</li>
+            <li>Schnellerer Handel</li>
+            <li>Industrie boomt</li>
+            <li>Städte wachsen</li>
+        </ul>
+    </div>
+
+    <div class="box" id="bilder">
+        <h2>Bilder</h2>
+        <img src="https://i.postimg.cc/Qtg75FmG/33403-1200x1200-8931.jpg">
+        <p>Eisenbahn aus der Industrialisierung</p>
+    </div>
+
+</div>
 
 </body>
 </html>
