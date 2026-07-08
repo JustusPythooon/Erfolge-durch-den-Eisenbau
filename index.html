@@ -1,104 +1,203 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Eisenbahnbau</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eisenbahnbau - Industrialisierung</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
+<style>
 
-        nav {
-            background: #333;
-            padding: 10px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        nav a {
-            color: white;
-            margin: 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        nav a:hover {
-            color: lightblue;
-        }
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#1d3557,#457b9d);
+    color:white;
+}
 
-        header {
-            text-align: center;
-            padding: 20px;
-            background: #ddd;
-        }
+/* Navigation */
 
-        .container {
-            padding: 20px;
-        }
+.navbar{
+    position:sticky;
+    top:0;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    padding:15px;
+    background:#0b1020;
+    z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,0.4);
+}
 
-        .box {
-            background: white;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0 0 10px gray;
-        }
+.navbar button{
+    border:none;
+    background:#1e90ff;
+    color:white;
+    padding:12px 20px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
 
-        img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px;
-        }
+.navbar button:hover{
+    background:#00d4ff;
+    transform:translateY(-2px);
+}
+/* Header */
 
-        /* Schema */
-        .schema {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
+header{
+    text-align:center;
+    padding:80px 20px;
+    background:
+    linear-gradient(rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=1500&q=80");
+    background-size:cover;
+    background-position:center;
+}
 
-        .row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+header h1{
+    font-size:4rem;
+    margin-bottom:10px;
+}
 
-        .node {
-            background: #e3f2fd;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 5px gray;
-            text-align: center;
-            min-width: 180px;
-        }
+header p{
+    font-size:1.3rem;
+}
 
-        .arrow {
-            font-size: 30px;
-        }
-    </style>
+/* Container */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+}
+
+/* Karten */
+
+.box{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:25px;
+    margin:25px 0;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation:fadeIn 1s ease;
+}
+
+.box h2{
+    color:#00d4ff;
+    margin-bottom:15px;
+}
+
+/* Schema */
+
+.schema{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+.row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.node{
+    background:white;
+    color:#222;
+    padding:15px;
+    min-width:220px;
+    border-radius:15px;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.node:hover{
+    transform:scale(1.05);
+}
+
+.arrow{
+    font-size:35px;
+}
+
+/* Listen */
+
+ul{
+    padding-left:25px;
+}
+
+li{
+    margin-bottom:12px;
+}
+
+/* Bild */
+
+img{
+    width:100%;
+    max-width:700px;
+    border-radius:20px;
+    display:block;
+    margin:auto;
+    box-shadow:0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    background:rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<nav>
-    #Start</a>
-    <a href="#schema">Schema</a>
-    <a href="#bilder">Bilder</a>
+<nav class="navbar">
+    <button onclick="scrollToSection('start')">🏠 Start</button>
+    <button onclick="scrollToSection('schema')">📈 Schema</button>
+    <button onclick="scrollToSection('fakten')">📌 Fakten</button>
+    <button onclick="scrollToSection('bilder')">📷 Bilder</button>
 </nav>
 
-<header>
-    <h1>Eisenbahnbau</h1>
-    <p>Industrialisierung in Deutschland</p>
+
+<header id="start">
+    <h1>🚂 Eisenbahnbau</h1>
+    <p>Die Industrialisierung in Deutschland</p>
 </header>
 
 <div class="container">
 
     <div class="box" id="schema">
-        <h2>Schema: Erfolge durch den Eisenbahnbau</h2>
+        <h2>📈 Schema: Auswirkungen des Eisenbahnbaus</h2>
 
         <div class="schema">
 
@@ -106,7 +205,9 @@
 
             <div class="arrow">⬇</div>
 
-            <div class="node">Schneller Transport von Waren und Menschen</div>
+            <div class="node">
+                Schneller Transport von Waren und Menschen
+            </div>
 
             <div class="arrow">⬇</div>
 
@@ -143,34 +244,67 @@
         </div>
     </div>
 
-    <div class="box">
-        <h2>Wichtige Fakten</h2>
+    <div class="box" id="fakten">
+        <h2>📌 Wichtige Fakten</h2>
+
         <ul>
-            <li>Mehr Transporte</li>
-            <li>Schnellerer Handel</li>
-            <li>Industrie boomt</li>
-            <li>Städte wachsen</li>
-        </ul>
-    </div>
- <div class="box">
-        <h2>Weiter Auswirkungen</h2>
-        <ul>
-            <li>Umwelt: Der Rauch der Bei der Verbrennung der Kohle entsteht ist schädlich für die Umwelt. </li>
-            <li>Veränderungen der Arbeitswelt: Das Abauen von Erzen und Kohle wirz zur Goldgrube. Außerdem ist nun der Warentransport deutlich einfacher, dies ermöglicht viele neue Jobs. </li>
-            <li>Städteentwicklung: Die Städte Wachsen und hinter der Stadtmauer werden Fabriken gebaut.</li>
- 
+            <li>🚄 Mehr Transporte in kürzerer Zeit</li>
+            <li>💰 Schnellerer Handel</li>
+            <li>🏭 Wachstum der Industrie</li>
+            <li>🏙️ Wachstum der Städte</li>
         </ul>
     </div>
 
+    <div class="box">
+        <h2>🌍 Weitere Auswirkungen</h2>
+
+        <ul>
+            <li><b>Umwelt:</b> Bei der Verbrennung von Kohle entstand Rauch, der die Umwelt belastete.</li>
+
+            <li><b>Arbeitswelt:</b> Der Abbau von Kohle und Erzen wurde wichtiger. Viele neue Arbeitsplätze entstanden.</li>
+
+            <li><b>Städteentwicklung:</b> Städte wuchsen stark und außerhalb der Stadtmauern entstanden Fabriken.</li>
+        </ul>
+    </div>
 
     <div class="box" id="bilder">
-        <h2>Bilder</h2>
-        <img src="https://i.postimg.cc/Qtg75FmG/33403-1200x1200-8931.jpg">
-        <p>Eisenbahn aus der Industrialisierung</p>
-        <p>Bild von: https://ger.animalia-life.club/Eisenbahnen-der-industriellen-Revolution</p>
+
+        <h2>📸 Bild aus der Industrialisierung</h2>
+
+        <img src="https://i.postimg.cc/Qtg75FmG/33403-1200x1200-8931.jpg"
+             alt="Eisenbahn aus der Industrialisierung">
+
+        <p style="margin-top:15px;">
+            Eisenbahn aus der Zeit der Industrialisierung.
+        </p>
+
+        <p>
+            Quelle:
+            https://ger.animalia-life.club/Eisenbahnen-der-industriellen-Revolution
+        </p>
     </div>
 
 </div>
 
+<footer>
+    🚂 Eisenbahnbau • Industrialisierung • Schulprojekt
+</footer>
+
 </body>
+<script>
+function scrollToSection(id) {
+    const element = document.getElementById(id);
+
+    const offset = 90; // Höhe der Topbar
+    const position =
+        element.getBoundingClientRect().top +
+        window.pageYOffset -
+        offset;
+
+    window.scrollTo({
+        top: position,
+        behavior: "smooth"
+    });
+}
+</script>
 </html>
